@@ -21,7 +21,7 @@ The app may request the following permissions:
 - **Storage:** To export and save PDF invoices in your device's memory.
 
 ## 4. Contact
-If you have any questions about this Privacy Policy, you can contact us at: [Your Contact Email]
+If you have any questions about this Privacy Policy, you can contact us.
 
 ---
 
