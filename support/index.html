@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiGestor Support</title>
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:900px;margin:auto;padding:24px;line-height:1.6;color:#111;background:#fafafa}
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 14px rgba(0,0,0,.05)}
+button{padding:10px 14px;border-radius:12px;border:1px solid #ddd;background:#fff;cursor:pointer;margin-right:8px}
+h1,h2{margin-bottom:8px} .muted{color:#666} a{color:#0a66ff;text-decoration:none}
+.hidden{display:none}
+</style>
+<script>
+function setLang(lang){document.querySelectorAll('[data-lang]').forEach(el=>el.classList.add('hidden'));document.querySelectorAll('[data-lang="'+lang+'"]').forEach(el=>el.classList.remove('hidden'));localStorage.setItem('lang',lang)}
+window.onload=()=>{const saved=localStorage.getItem('lang');const browserLang=((navigator.language||'en').startsWith('es'))?'es':'en';const l=saved||browserLan
+</script>
+</head>
+<body>
+<div class='card'>
+<button onclick="setLang('es')">ES</button><button onclick="setLang('en')">EN</button>
+<h1>MiGestor Support</h1>
+<p class='muted'>Help for invoices, expenses and business management.</p>
+</div>
+<div class='card' data-lang='en'>
+<h2>Contact</h2><p>Email: migestorsoporte@gmail.com<br>Response time: within 48 business hours.</p>
+<h2>FAQ</h2>
+<p><strong>How do I create a backup?</strong><br>Open Settings and use Backup.</p>
+<p><strong>Can I restore my data?</strong><br>Yes, from Settings.</p>
+<p><strong>Is my data private?</strong><br>Yes. Your data belongs to you.</p>
+<p><a href='/migestor-privacy/'>Privacy Policy</a></p>
+</div>
+<div class='card hidden' data-lang='es'>
+<h2>Contacto</h2><p>Email: migestorsoporte@gmail.com<br>Tiempo de respuesta: en 48 horas laborables.</p>
+<h2>Preguntas frecuentes</h2>
+<p><strong>¿Cómo hago una copia de seguridad?</strong><br>Abre Ajustes y usa Copia de seguridad.</p>
+<p><strong>¿Puedo restaurar mis datos?</strong><br>Sí, desde Ajustes.</p>
+<p><strong>¿Mis datos son privados?</strong><br>Sí. Tus datos son tuyos.</p>
+<p><a href='/migestor-privacy/'>Política de Privacidad</a></p>
+</div>
+</body>
+</html>
