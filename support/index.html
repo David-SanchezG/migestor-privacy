@@ -12,15 +12,16 @@ h1,h2{margin-bottom:8px} .muted{color:#666} a{color:#0a66ff;text-decoration:none
 .hidden{display:none}
 </style>
 <script>
-function setLang(lang){document.querySelectorAll('[data-lang]').forEach(el=>el.classList.add('hidden'));document.querySelectorAll('[data-lang="'+lang+'"]').forEach(el=>el.classList.remove('hidden'));localStorage.setItem('lang',lang)}
-window.onload=()=>{const saved=localStorage.getItem('lang');const browserLang=((navigator.language||'en').startsWith('es'))?'es':'en';const l=saved||browserLan
+window.setLang = function(lang){document.querySelectorAll('[data-lang]').forEach(el=>el.classList.add('hidden'));document.querySelectorAll('[data-lang="'+lang+'"]').forEach(el=>el.classList.remove('hidden'));localStorage.setItem('lang',lang)}
+window.onload=()=>{const saved=localStorage.getItem('lang');const browserLang=((navigator.language||'en').startsWith('es'))?'es':'en';const l=saved||browserLang;setLang(l)}
 </script>
 </head>
 <body>
 <div class='card'>
 <button onclick="setLang('es')">ES</button><button onclick="setLang('en')">EN</button>
 <h1>MiGestor Support</h1>
-<p class='muted'>Help for invoices, expenses and business management.</p>
+<p class='muted' data-lang='en'>Help for invoices, expenses and business management.</p>
+<p class='muted hidden' data-lang='es'>Ayuda para facturas, gastos y gestión de negocios.</p>
 </div>
 <div class='card' data-lang='en'>
 <h2>Contact</h2><p>Email: migestorsoporte@gmail.com<br>Response time: within 48 business hours.</p>
